@@ -75,7 +75,15 @@ public class GroundMovement : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && canJump)
         {
             canJump = false;
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+            if (GetComponent<GravInvertGadget>().flipped)
+            {
+                rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))

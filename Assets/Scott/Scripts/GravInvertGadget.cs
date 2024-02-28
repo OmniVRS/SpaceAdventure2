@@ -16,6 +16,23 @@ public class GravInvertGadget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GetComponentInParent<GroundMovement>().canJump = false;
+            if (!flipped)
+            {
+                flipped = true;
+                rb.gravityScale *= -1;
+                // Rotate the player's transform to 180 degrees on the z-axis
+                transform.Rotate(180, 0, 0);
+            }
+            else
+            {
+                flipped = false;
+                rb.gravityScale *= -1;
+                // Rotate the player's transform to 0 degrees on the z-axis
+                transform.Rotate(-180, 0, 0);
+            }
+        }
     }
 }

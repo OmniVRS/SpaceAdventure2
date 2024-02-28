@@ -49,15 +49,28 @@ public class GroundMovement : MonoBehaviour
             }
         }*/
 
-        float rotationY = horizontalInput > 0 ? 0 : 180;
-        if (GetComponent<GravInvertGadget>().flipped)
-        {
-            // If flipped is true, reverse the rotationY value
-            rotationY = (rotationY == 0) ? 180 : 0;
-        }
+        float currentZRotation = transform.rotation.eulerAngles.z;
 
-        // Apply rotation
-        transform.rotation = Quaternion.Euler(0, rotationY, 0);
+        // Only rotate when there is non-zero horizontal input
+        if (horizontalInput != 0)
+        {
+            // Determine rotation based on horizontalInput and GravInvertGadget's flipped state
+            float rotationY = horizontalInput > 0 ? 0 : 180;
+            if (GetComponent<GravInvertGadget>().flipped)
+            {
+                // If flipped is true, reverse the rotationY value
+                rotationY = (rotationY == 0) ? 180 : 0;
+            }
+
+            // Apply rotation, preserving the current z rotation
+            transform.rotation = Quaternion.Euler(0, rotationY, currentZRotation);
+        }
+        else
+        {
+            // If not moving horizontally, maintain the current rotation
+            // This prevents automatic rotation when stationary
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, currentZRotation);
+        }
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && canJump)
         {

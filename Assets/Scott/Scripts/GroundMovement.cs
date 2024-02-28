@@ -23,17 +23,41 @@ public class GroundMovement : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector2.right * horizontalInput * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * horizontalInput * moveSpeed * Time.deltaTime, Space.World);
 
-        if (horizontalInput > 0)
+        /*if (horizontalInput > 0)
         {
-            
+            if (!GetComponent<GravInvertGadget>().flipped)
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
+            }
         }
 
         if (horizontalInput < 0)
         {
-            
+            if (GetComponent<GravInvertGadget>().flipped)
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
+            }
+        }*/
+
+        float rotationY = horizontalInput > 0 ? 0 : 180;
+        if (GetComponent<GravInvertGadget>().flipped)
+        {
+            // If flipped is true, reverse the rotationY value
+            rotationY = (rotationY == 0) ? 180 : 0;
         }
+
+        // Apply rotation
+        transform.rotation = Quaternion.Euler(0, rotationY, 0);
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && canJump)
         {

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ScannerScriptable
   m_EditorClassIdentifier: 
   gadgetSprite: {fileID: -1303028982, guid: 602e51371371bec4892b5a9dd831af15, type: 3}
+  item_type: 2

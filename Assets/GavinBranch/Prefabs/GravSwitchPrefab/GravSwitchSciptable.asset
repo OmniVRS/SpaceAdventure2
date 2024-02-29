@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GravSwitchSciptable
   m_EditorClassIdentifier: 
   gadgetSprite: {fileID: 21300000, guid: 7e3f51dc5ad93d3439e34608e1d69634, type: 3}
+  item_type: 1

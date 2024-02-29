@@ -7,6 +7,7 @@ TagManager:
   - Child
   - Collectable
   - Terrain
+  - Secret
   layers:
   - Default
   - TransparentFX

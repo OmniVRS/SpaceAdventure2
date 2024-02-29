@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Gadget
   - Child
+  - Collectable
+  - Terrain
+  - Secret
   layers:
   - Default
   - TransparentFX

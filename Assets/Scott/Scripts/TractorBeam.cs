@@ -17,9 +17,15 @@ public class TractorBeam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             holdPoint.transform.DetachChildren();
+
+            if (heldItem != null)
+            {
+                heldItem.GetComponent<Rigidbody2D>().isKinematic = false;
+            }
+
             heldItem = null;
             gameObject.SetActive(false);
         }
@@ -30,6 +36,7 @@ public class TractorBeam : MonoBehaviour
         if (collision.gameObject.CompareTag("Collectable"))
         {
             heldItem = collision.gameObject;
+            heldItem.GetComponent<Rigidbody2D>().isKinematic = true;
             collision.gameObject.transform.parent = holdPoint.transform;
             collision.gameObject.transform.position = new Vector2(holdPoint.transform.position.x, holdPoint.transform.position.y);
             collision.gameObject.transform.rotation = holdPoint.transform.rotation;

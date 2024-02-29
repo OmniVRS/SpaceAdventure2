@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PresonalTractorBeamScriptable
   m_EditorClassIdentifier: 
   gadgetSprite: {fileID: 21300000, guid: fbd15c6657697ac47aa26ff65c3feb7b, type: 3}
+  item_type: 0

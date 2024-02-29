@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Isaiah's Folder/Scenes/Main Menu.unity
+    guid: 7d323adff7735554f84252374f24d8d3
     path: Assets/GavinBranch/Scenes/DontDestoryOnLoadScene.unity
     guid: 6d78f206946408046a4171a353a7ee9b
   - enabled: 1

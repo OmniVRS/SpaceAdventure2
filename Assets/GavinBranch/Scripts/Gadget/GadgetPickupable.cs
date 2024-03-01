@@ -1,13 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
-public class GadgetPickupable : MonoBehaviour, IPickable
+public class GadgetPickupable : MonoBehaviour, IPickable , IDataPersistence
 {
-    public GadgetScriptable gadgetScriptableObject;
+    //give speical ids for gadgets
+    [SerializeField] private string id;
+    [ContextMenu("Generate guid for id")]
+    private void GenerateGuid()
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
 
+    public GadgetScriptable gadgetScriptableObject;
+    public bool isCollected = false;
     public void PickupItem()
     {
-        Destroy(gameObject);
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        isCollected = true;
+        gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+    }
+    public void LoadData(GameData data)
+    {
+        data.GadgetsCollected.TryGetValue(id, out isCollected);
+        Debug.Log(isCollected);
+        if(isCollected) 
+        { 
+            PickupItem();
+        }
+    }
+    public void SaveData(ref GameData data) 
+    {
+        if(data.GadgetsCollected.ContainsKey(id))
+        {
+            data.GadgetsCollected.Remove(id);
+        }
+        data.GadgetsCollected.Add(id, isCollected);
     }
 }

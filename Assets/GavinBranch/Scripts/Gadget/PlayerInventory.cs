@@ -118,7 +118,6 @@ public class PlayerInventory : MonoBehaviour
 
         if (isPickItemKeyPressed)
         {
-            Debug.Log(isPickItemKeyPressed);
 
             GameObject otherGameObject = collision.gameObject;
 

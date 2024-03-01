@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082856c034a218340948aecf2e484a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryList: 
+  inventoryList: 000000000100000002000000
   selectedItem: 0
   playerReach: {fileID: 1151653835}
   pickItemKey: 101

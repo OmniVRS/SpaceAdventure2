@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TestValues : MonoBehaviour
+public class TestValues : MonoBehaviour, IDataPersistence
 {
-    public float speed = 5;
+    public int speed = 5;
 
     // Update is called once per frame
     void Update()
@@ -18,5 +19,16 @@ public class TestValues : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.speed = data.testValue;
+        this.transform.position = data.playerPos;
+    }
+    public void SaveData(ref GameData data) 
+    {
+        data.testValue = speed;
+        data.playerPos = transform.position;
     }
 }

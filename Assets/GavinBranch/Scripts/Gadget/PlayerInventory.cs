@@ -22,6 +22,7 @@ public class PlayerInventory : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] Image[] inventorySoltImage = new Image[3];
+    public bool[] isactive = new bool[3]; 
     [SerializeField] Image[] inventoryBackgroundImage = new Image[3];
     [SerializeField] Sprite emptySlotSprite;
 
@@ -60,11 +61,14 @@ public class PlayerInventory : MonoBehaviour
         {
             if(a == selectedItem)
             {
-                image.color = new Color32(145,255,126,255);
-            }
-            else
-            {
-                image.color = new Color32(219,219,219,255);
+                if (isactive[a])
+                {
+                    image.color = new Color32(145, 255, 126, 255);
+                }
+                else
+                {
+                    image.color = new Color32(219, 219, 219, 255);
+                }
             }
             a++;
         }
@@ -75,18 +79,30 @@ public class PlayerInventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && inventoryList.Count > 0) 
         {
             selectedItem = 0;
+            SetUiActive(selectedItem);
             GadgetSetActive();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && inventoryList.Count > 1)
         {
             selectedItem = 1;
+            SetUiActive(selectedItem);
             GadgetSetActive();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3) && inventoryList.Count > 2)
         {
             selectedItem = 2;
+            SetUiActive(selectedItem);
             GadgetSetActive();
         }
+    }
+
+    private void SetUiActive(int uiSlot)
+    {
+        if (!isactive[uiSlot])
+        {
+            isactive[uiSlot] = true;
+        }
+        else { isactive[uiSlot] = false;}
     }
     private void GadgetSetActive()
     {

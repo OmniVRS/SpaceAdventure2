@@ -28,6 +28,7 @@ public class GadgetPickupable : MonoBehaviour, IPickable , IDataPersistence
         if(isCollected) 
         { 
             PickupItem();
+            GameObject.Find("Player").GetComponent<PlayerInventory>().AddItemToInventory(this, this);
         }
     }
     public void SaveData(ref GameData data) 

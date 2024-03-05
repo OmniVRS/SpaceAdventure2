@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -127,11 +128,15 @@ public class PlayerInventory : MonoBehaviour
 
                 if (item != null)
                 {
-                    inventoryList.Add(otherGameObject.GetComponent<GadgetPickupable>().gadgetScriptableObject.item_type);
-                    item.PickupItem();
+                    AddItemToInventory(item, otherGameObject.GetComponent<GadgetPickupable>());
                 }
             }
         }
+    }
+    public void AddItemToInventory(IPickable item, GadgetPickupable GP)
+    {
+        inventoryList.Add(GP.gadgetScriptableObject.item_type);
+        item.PickupItem();
     }
 }
 public interface IPickable

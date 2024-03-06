@@ -8,6 +8,7 @@ public class GroundMovement : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     private Rigidbody2D rb;
+    private Animator animator;
     public GameObject tractorBeam;
     private bool isOn = false;
     public bool canJump = true;
@@ -17,6 +18,7 @@ public class GroundMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         tractorBeam.SetActive(false);
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,30 +26,6 @@ public class GroundMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * horizontalInput * moveSpeed * Time.deltaTime, Space.World);
-
-        /*if (horizontalInput > 0)
-        {
-            if (!GetComponent<GravInvertGadget>().flipped)
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
-            }
-            else
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
-            }
-        }
-
-        if (horizontalInput < 0)
-        {
-            if (GetComponent<GravInvertGadget>().flipped)
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
-            }
-            else
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
-            }
-        }*/
 
         float currentZRotation = transform.rotation.eulerAngles.z;
 
@@ -78,10 +56,12 @@ public class GroundMovement : MonoBehaviour
 
             if (GetComponent<GravInvertGadget>().flipped)
             {
+                animator.SetTrigger("OnJump");
                 rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
             }
             else
             {
+                animator.SetTrigger("OnJump");
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
         }
@@ -99,6 +79,8 @@ public class GroundMovement : MonoBehaviour
                 isOn = false;
             }
         }
+
+        animator.SetFloat("Horizontal Input", Mathf.Abs(horizontalInput));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

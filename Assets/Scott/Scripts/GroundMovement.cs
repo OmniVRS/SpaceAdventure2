@@ -56,10 +56,12 @@ public class GroundMovement : MonoBehaviour
 
             if (GetComponent<GravInvertGadget>().flipped)
             {
+                animator.SetTrigger("OnJump");
                 rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
             }
             else
             {
+                animator.SetTrigger("OnJump");
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
         }

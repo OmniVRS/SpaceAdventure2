@@ -24,6 +24,7 @@ public class GroundMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Get horizontal Input
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * horizontalInput * moveSpeed * Time.deltaTime, Space.World);
 
@@ -66,7 +67,7 @@ public class GroundMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Space))
         {
             if (!isOn)
             {

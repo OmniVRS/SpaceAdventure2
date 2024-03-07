@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         child.transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, (-0.2f * horizontalInput), 1);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Space))
         {
             if (!isOn)
             {

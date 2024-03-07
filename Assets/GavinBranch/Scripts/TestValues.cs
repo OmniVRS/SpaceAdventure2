@@ -13,11 +13,13 @@ public class TestValues : MonoBehaviour, IDataPersistence
     {
         if(Input.GetKeyDown(KeyCode.K))
         {
-            SceneManager.LoadScene(1);
+            GameObject.Find("DataPersistenceManager").GetComponent<DataPersistenceManager>().SaveGame();
+            SceneManager.LoadScene(0);
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            SceneManager.LoadScene(2);
+            GameObject.Find("DataPersistenceManager").GetComponent<DataPersistenceManager>().SaveGame();
+            SceneManager.LoadScene(1);
         }
     }
 

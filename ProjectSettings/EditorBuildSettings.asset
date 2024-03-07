@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Isaiah's Folder/Scenes/Level 1.unity
     guid: 6bcd4e809dddb4c48bf2d25a0159d936
-  - enabled: 0
+  - enabled: 1
     path: Assets/GavinBranch/Scenes/GavinTest1.unity
     guid: d4cc14e0e509546419812f6487b3d655
-  - enabled: 0
+  - enabled: 1
     path: Assets/GavinBranch/Scenes/GavinTest2.unity
     guid: fa3058f436a712b47be8813e2669f7e3
-  - enabled: 0
+  - enabled: 1
     path: Assets/GavinBranch/Scenes/DontDestoryOnLoadScene.unity
     guid: 6d78f206946408046a4171a353a7ee9b
   - enabled: 1

@@ -12,6 +12,16 @@ public class GadgetPickupable : MonoBehaviour, IPickable , IDataPersistence
     {
         id = System.Guid.NewGuid().ToString();
     }
+    private void Start()
+    {
+        PlayerInventory playerInventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
+
+        if (playerInventory != null && playerInventory.inventoryList.Contains(gadgetScriptableObject.item_type))
+        {
+            // The item is already in the player's inventory, call PickupItem method
+            PickupItem();
+        }
+    }
 
     public GadgetScriptable gadgetScriptableObject;
     public bool isCollected = false;

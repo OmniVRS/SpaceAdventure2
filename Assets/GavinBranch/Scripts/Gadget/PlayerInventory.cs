@@ -47,12 +47,12 @@ public class PlayerInventory : MonoBehaviour
         {
             if (i < inventoryList.Count)
             {
-                    inventorySoltImage[i].sprite = itemSetActive[inventoryList[i]].GetComponent<Gadget>().gadgetScriptableObject.gadgetSprite;
+                inventorySoltImage[i].sprite = itemSetActive[inventoryList[i]].GetComponent<Gadget>().gadgetScriptableObject.gadgetSprite;
 
             }
             else
             {
-                    inventorySoltImage[i].sprite = emptySlotSprite;
+                inventorySoltImage[i].sprite = emptySlotSprite;
             }
             
         }

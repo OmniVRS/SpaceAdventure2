@@ -9,6 +9,7 @@ TagManager:
   - Collectable
   - Terrain
   - Secret
+  - Ground
   layers:
   - Default
   - TransparentFX

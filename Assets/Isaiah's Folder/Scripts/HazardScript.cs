@@ -20,9 +20,9 @@ public class HazardScript : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("UFO"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            player.transform.position = spawnPoint.transform.position;
+            collision.transform.position = spawnPoint.transform.position;
         }
     }
 }

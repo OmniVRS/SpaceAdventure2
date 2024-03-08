@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LevelsStarmap : MonoBehaviour
 {
     public GameObject player;
-    private string selectedLevel;
     public string starMapScene = "StarMap";
     public string BluePlanetScene;
     public string AsteroidBeltScene;
@@ -21,11 +20,9 @@ public class LevelsStarmap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && selectedLevel != null)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             SceneManager.LoadScene(starMapScene);
         }
     }
-
-    
 }

@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 273834186}
   - component: {fileID: 273834187}
+  - component: {fileID: 273834188}
   m_Layer: 0
   m_Name: TechPlanet
   m_TagString: Untagged
@@ -181,6 +182,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.058311, y: 2.7517762}
   m_EdgeRadius: 0
+--- !u!114 &273834188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273834185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c67edcc4e05f649ada1901ba2f61c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendToScene: 
 --- !u!1 &274716473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5660345102319009852, guid: 3ec4d266467cca94aa0bf1a80b3cb093, type: 3}
@@ -196,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815002446}
   - component: {fileID: 815002447}
+  - component: {fileID: 815002448}
   m_Layer: 0
   m_Name: RedPlanet
   m_TagString: Untagged
@@ -244,6 +259,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7054253, y: 2.3565898}
   m_EdgeRadius: 0
+--- !u!114 &815002448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815002445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c67edcc4e05f649ada1901ba2f61c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendToScene: 
 --- !u!1 &1066281012
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712806833}
   - component: {fileID: 1712806832}
+  - component: {fileID: 1712806834}
   m_Layer: 0
   m_Name: BluePlanet
   m_TagString: Untagged
@@ -571,6 +600,19 @@ Transform:
   m_Father: {fileID: 2059345728}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1712806834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712806831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c67edcc4e05f649ada1901ba2f61c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendToScene: 
 --- !u!1 &1743130840
 GameObject:
   m_ObjectHideFlags: 3
@@ -738,7 +780,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2059345728}
   - component: {fileID: 2059345727}
-  - component: {fileID: 2059345729}
   m_Layer: 0
   m_Name: StarMap-1.png
   m_TagString: Untagged
@@ -817,22 +858,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2059345729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059345726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c11309832e92a2042ba8619c11157942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starMapScene: StarMap
-  BluePlanetScene: StarMap
-  AsteroidBeltScene: StarMap
-  TechPlanetScene: StarMap
 --- !u!1 &2079236280
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2079236281}
   - component: {fileID: 2079236282}
+  - component: {fileID: 2079236283}
   m_Layer: 0
   m_Name: AsteroidBelt
   m_TagString: Untagged
@@ -891,3 +917,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.1894355, y: 1.9380691}
   m_EdgeRadius: 0
+--- !u!114 &2079236283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079236280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c67edcc4e05f649ada1901ba2f61c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendToScene: 

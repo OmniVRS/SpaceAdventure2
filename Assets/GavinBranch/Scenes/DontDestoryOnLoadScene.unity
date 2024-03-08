@@ -679,11 +679,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1789781058388300440, guid: c1e604c8df13b3642851134dda4560d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 1789781058388300440, guid: c1e604c8df13b3642851134dda4560d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.15
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 1789781058388300440, guid: c1e604c8df13b3642851134dda4560d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -733,6 +733,10 @@ PrefabInstance:
       propertyPath: personalTractorBeam
       value: 
       objectReference: {fileID: 2137760972}
+    - target: {fileID: 1789781058388300442, guid: c1e604c8df13b3642851134dda4560d5, type: 3}
+      propertyPath: pickableLayer.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1789781058388300442, guid: c1e604c8df13b3642851134dda4560d5, type: 3}
       propertyPath: inventoryList.Array.size
       value: 0
@@ -802,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1160800018027246341, guid: c2fca2483fc0d3e4ab46e25589635fb0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8084621142404743480, guid: c2fca2483fc0d3e4ab46e25589635fb0, type: 3}
       propertyPath: m_RootOrder

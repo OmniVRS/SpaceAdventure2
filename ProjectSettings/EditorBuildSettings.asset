@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scott/ScottScene.unity
     guid: 9fc9804fabcfb354caddce64c98557fc
+  - enabled: 1
+    path: Assets/Scott/HiddenWorldLevel.unity
+    guid: cf76dca21294b0649b2f703a310b102c
   m_configObjects: {}

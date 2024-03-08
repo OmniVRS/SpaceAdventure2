@@ -86,7 +86,7 @@ public class GroundMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Terrain"))
+        if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Secret") || collision.gameObject.CompareTag("Collectable"))
         {
             canJump = true;
         }

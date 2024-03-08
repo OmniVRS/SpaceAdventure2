@@ -194,7 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c67edcc4e05f649ada1901ba2f61c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToScene: 
+  sendToScene: Level2
+  hasPlayer: 0
 --- !u!1 &274716473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5660345102319009852, guid: 3ec4d266467cca94aa0bf1a80b3cb093, type: 3}
@@ -301,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sendToScene: StarMap
+  hasPlayer: 0
 --- !u!1 &975874308
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sendToScene: HiddenWorldLevel
+  hasPlayer: 0
 --- !u!50 &975874313
 Rigidbody2D:
   serializedVersion: 4
@@ -789,6 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sendToScene: 
+  hasPlayer: 0
 --- !u!1 &1743130840
 GameObject:
   m_ObjectHideFlags: 3
@@ -1107,3 +1111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sendToScene: StarMap
+  hasPlayer: 0

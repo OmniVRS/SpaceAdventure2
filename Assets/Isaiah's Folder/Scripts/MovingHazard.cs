@@ -57,7 +57,7 @@ public class MovingHazard : MonoBehaviour
             }
             else
             {
-                newY = startingPosition.x + (yAmp * Mathf.Cos((6.28f / yPeriod) * Time.time));
+                newY = startingPosition.y + (yAmp * Mathf.Cos((6.28f / yPeriod) * Time.time));
             }
 
         }

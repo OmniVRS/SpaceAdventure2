@@ -36,7 +36,7 @@ public class LockedObject : MonoBehaviour
     IEnumerator OpenSaysMe()
     {
         sr.sprite = openedLock;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
 }

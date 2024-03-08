@@ -15,6 +15,9 @@ public class PlayerInventory : MonoBehaviour
     [Header("Keys")]
     [SerializeField] KeyCode pickItemKey;
     private bool isPickItemKeyPressed = false;
+    private float overlapRadius = 0.5f; // Set the desired overlap radius
+    public LayerMask pickableLayer; // Set the layer for pickable objects
+
 
     [Header("Item gameobjects")]
     [SerializeField] GameObject gravSwitch;
@@ -47,14 +50,18 @@ public class PlayerInventory : MonoBehaviour
         {
             if (i < inventoryList.Count)
             {
-                    inventorySoltImage[i].sprite = itemSetActive[inventoryList[i]].GetComponent<Gadget>().gadgetScriptableObject.gadgetSprite;
+                inventorySoltImage[i].sprite = itemSetActive[inventoryList[i]].GetComponent<Gadget>().gadgetScriptableObject.gadgetSprite;
 
             }
             else
             {
-                    inventorySoltImage[i].sprite = emptySlotSprite;
+                inventorySoltImage[i].sprite = emptySlotSprite;
             }
             
+        }
+        if (isPickItemKeyPressed)
+        {
+            CheckForPickableItems();
         }
 
         int a = 0;
@@ -113,14 +120,21 @@ public class PlayerInventory : MonoBehaviour
             selectedItemGameObject.SetActive(true);
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    
+    public void AddItemToInventory(IPickable item, GadgetPickupable GP)
     {
-        Debug.Log(collision.gameObject.name);
+        inventoryList.Add(GP.gadgetScriptableObject.item_type);
+        item.PickupItem();
+    }
+    private void CheckForPickableItems()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, overlapRadius, pickableLayer);
 
-        if (isPickItemKeyPressed)
+        foreach (Collider2D collider in colliders)
         {
+            Debug.Log(collider.gameObject.name);
 
-            GameObject otherGameObject = collision.gameObject;
+            GameObject otherGameObject = collider.gameObject;
 
             if (otherGameObject.CompareTag("Gadget"))
             {
@@ -132,11 +146,6 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
         }
-    }
-    public void AddItemToInventory(IPickable item, GadgetPickupable GP)
-    {
-        inventoryList.Add(GP.gadgetScriptableObject.item_type);
-        item.PickupItem();
     }
 }
 public interface IPickable

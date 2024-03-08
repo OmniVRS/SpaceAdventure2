@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class RunOnSceneSwitch : MonoBehaviour
 {
-    public int sceneToLoad;
+    
+    public string sceneToLoad;
     private void Awake()
     {
         SceneManager.LoadScene(sceneToLoad);
